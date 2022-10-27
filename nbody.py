@@ -9,6 +9,9 @@
 # modified by Andriy Misyura
 # slightly modified by bmmeijers
 
+# slightly modified by FAIDON DIAKOMOPOULOS (Diak)
+# slightly modified by Kou Wai Chan (Charlesckw)
+
 import sys
 from math import sqrt, pi as PI
 
@@ -69,8 +72,7 @@ SYSTEM = tuple(BODIES.values())
 PAIRS = tuple(combinations(SYSTEM))
 
 
-def advance(dt, n, bodies=SYSTEM, pairs=PAIRS):
-    b=1
+def advance(dt, n, bodies=SYSTEM, pairs=PAIRS, filename="Orbits", condition=True):
     for i in range(n):
         for ([x1, y1, z1], v1, m1, [x2, y2, z2], v2, m2) in pairs:
             dx = x1 - x2
