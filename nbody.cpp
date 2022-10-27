@@ -262,9 +262,30 @@ int main(int argc, char **argv) {
         const unsigned int n = atoi(argv[1]);
         offset_momentum(state);
         std::cout << energy(state) << std::endl;
+        std::ofstream out_stream;
+        bool flag;
+        if("true" == std::string(argv[3])) {
+            flag = true;
+        } else{
+            flag = false;
+        }
+        if(flag){
+            out_stream.open("../" + std::string(argv[2]) + ".csv");
+            out_stream << "Name;X-coordinate;Y-coordinate;Z-coordinate;X-velocity;Y-velocity;Z-velocity;mass" << std::endl;
+        }
         for (int i = 0; i < n; ++i) {
             advance(state, 0.01);
+            if(flag) {
+                for (int j = 0; j < BODIES_COUNT; ++j) {
+                    out_stream << state[j].name + ";" + double2str(state[j].position.x) + +";" +
+                                  double2str(state[j].position.y) + +";" + double2str(state[j].position.z) +
+                                  ";" + double2str(state[j].velocity.x) + +";" +
+                                  double2str(state[j].velocity.y) + +";" + double2str(state[j].velocity.z) +
+                                  ";" + double2str(state[j].mass) << std::endl;
+                }
+            }
         }
+        if(flag){out_stream.close();}
         std::cout << energy(state) << std::endl;
         return EXIT_SUCCESS;
     }
