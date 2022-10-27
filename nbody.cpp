@@ -240,10 +240,12 @@ body state[] = {
 
 
 int main(int argc, char **argv) {
-    if (argc != 2) {
+    if (argc != 4) {
         std::cout << "This is " << argv[0] << std::endl;
-        std::cout << "Call this program with an integer as program argument" << std::endl;
-        std::cout << "(to set the number of iterations for the n-body simulation)." << std::endl;
+        std::cout << "Call this program with an integer, a string and a boolean condition, as program argument" << std::endl;
+        std::cout << "(integer to set the number of iterations for the n-body simulation)." << std::endl;
+        std::cout << "(string as the name of the .csv file." << std::endl;
+        std::cout << "(boolean condition true if you want to create a .csv file, or false if not." <<std::endl;
         return EXIT_FAILURE;
     } else {
         const unsigned int n = atoi(argv[1]);
