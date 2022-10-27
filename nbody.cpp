@@ -9,6 +9,8 @@
    
    contributed by cvergu
    slightly modified by bmmeijers
+   slightly modified by FAIDON DIAKOMOPOULOS (Diak)
+   slightly modified by Kou Wai Chan (Charlesckw)
 */
 
 #define _USE_MATH_DEFINES // https://docs.microsoft.com/en-us/cpp/c-runtime-library/math-constants?view=msvc-160
