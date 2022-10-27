@@ -124,10 +124,10 @@ def offset_momentum(ref, bodies=SYSTEM, px=0.0, py=0.0, pz=0.0):
     v[2] = pz / m
 
 
-def main(n, ref="sun"):
+def main(n, ref="sun", filename="Orbits", condition=True):
     offset_momentum(BODIES[ref])
     report_energy()
-    advance(0.01, n)
+    advance(0.01, n, filename=filename, condition=condition)
     report_energy()
 
 
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     else:
         print(f"This is {sys.argv[0]}")
         print("Call this program with an integer, a string and a boolean condition, as program argument")
-        print(" (integer to set the number of iterations for the n-body simulation).")
+        print("(integer to set the number of iterations for the n-body simulation).")
         print("(string is the filename).")
-        print("True to create and False to not create a .csv file")
+        print("(True to create or False to not create a .csv file)")
         sys.exit(1)
