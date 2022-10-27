@@ -25,6 +25,13 @@ const double SOLAR_MASS = 4 * M_PI * M_PI;
 const double DAYS_PER_YEAR = 365.24;
 const unsigned int BODIES_COUNT = 5;
 
+// https://noobtuts.com/cpp/tutorial-for-noobs-part-11-type-conversions --- code resource
+std::string double2str(double x)
+{
+    std::stringstream ss;
+    ss << x;
+    return ss.str();
+}
 
 class vector3d {
 public:
