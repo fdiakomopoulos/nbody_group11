@@ -9,6 +9,9 @@
 # modified by Andriy Misyura
 # slightly modified by bmmeijers
 
+# slightly modified by FAIDON DIAKOMOPOULOS (Diak)
+# slightly modified by Kou Wai Chan (Charlesckw)
+
 import sys
 from math import sqrt, pi as PI
 
