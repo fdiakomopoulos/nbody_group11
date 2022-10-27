@@ -132,6 +132,8 @@ if __name__ == "__main__":
         sys.exit(0)
     else:
         print(f"This is {sys.argv[0]}")
-        print("Call this program with an integer as program argument")
-        print("(to set the number of iterations for the n-body simulation).")
+        print("Call this program with an integer, a string and a boolean condition, as program argument")
+        print(" (integer to set the number of iterations for the n-body simulation).")
+        print("(string is the filename).")
+        print("True to create and False to not create a .csv file")
         sys.exit(1)
