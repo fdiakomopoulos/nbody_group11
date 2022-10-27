@@ -121,8 +121,8 @@ def main(n, ref="sun"):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 2:
-        main(int(sys.argv[1]))
+    if len(sys.argv) >= 4:
+        main(int(sys.argv[1]), filename=sys.argv[2], condition=(sys.argv[3].lower()=="true"))
         sys.exit(0)
     else:
         print(f"This is {sys.argv[0]}")
