@@ -95,6 +95,11 @@ def advance(dt, n, bodies=SYSTEM, pairs=PAIRS, filename="Orbits", condition=True
             r[0] += dt * vx
             r[1] += dt * vy
             r[2] += dt * vz
+        if condition:
+            for name, (r, v, m) in BODIES.items():
+                fh.write("{};{};{};{};{};{};{};{}\n".format(name, r[0], r[1], r[2], v[0], v[1], v[2], m))
+    if condition:
+        fh.close()
 
 
 def report_energy(bodies=SYSTEM, pairs=PAIRS, e=0.0):
