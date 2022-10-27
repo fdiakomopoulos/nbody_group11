@@ -73,6 +73,9 @@ PAIRS = tuple(combinations(SYSTEM))
 
 
 def advance(dt, n, bodies=SYSTEM, pairs=PAIRS, filename="Orbits", condition=True):
+    if condition:
+            fh = open(filename + ".csv", "w")
+            fh.write("Name;X-coordinate;Y-coordinate;Z-coordinate;X-velocity;Y-velocity;Z-velocity;mass\n")
     for i in range(n):
         for ([x1, y1, z1], v1, m1, [x2, y2, z2], v2, m2) in pairs:
             dx = x1 - x2
