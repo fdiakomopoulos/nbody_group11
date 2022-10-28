@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\User\Desktop\Python for Geomatics\nbody\cmake-build-debug-visual-studio\CMakeFiles\f4341afec89eac9781af5274b06d694a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{44D45FFC-624E-3A8A-ADE6-317F94A19857}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
