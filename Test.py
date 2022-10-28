@@ -14,9 +14,14 @@ if __name__ == "__main__":
             if file[0].startswith("python"):
                 p = subprocess.run(sub_file)
             else:
-                p = subprocess.check_call(sub_file, shell=True)
-                print("The above values from: ", file, "for ",number, "iterations")
-                print(p)
+                if file==cmd_cpp_release:
+                    p = subprocess.check_call(sub_file, shell=True)
+                    print("The above values from C++ debugging for ",number, "iterations")
+                    print(p)
+                else:
+                    p = subprocess.check_call(sub_file, shell=True)
+                    print("The above values from C++ release for ",number, "iterations")
+                    print(p)
 
 
 
