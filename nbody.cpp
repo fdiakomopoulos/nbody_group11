@@ -18,7 +18,12 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cctype>
+#include <algorithm>
+#include <string>
+#include <ctime>
 
+clock_t start_time=clock();
 
 // these values are constant and not allowed to be changed
 const double SOLAR_MASS = 4 * M_PI * M_PI;
@@ -256,26 +261,29 @@ int main(int argc, char **argv) {
         std::cout << "Call this program with an integer, a string and a boolean condition, as program argument" << std::endl;
         std::cout << "(integer to set the number of iterations for the n-body simulation)." << std::endl;
         std::cout << "(string as the name of the .csv file." << std::endl;
-        std::cout << "(boolean condition true if you want to create a .csv file, or false if not." <<std::endl;
+        std::cout << "(boolean condition: true if you want to create a .csv file, or false if not." <<std::endl;
         return EXIT_FAILURE;
     } else {
         const unsigned int n = atoi(argv[1]);
         offset_momentum(state);
         std::cout << energy(state) << std::endl;
         std::ofstream out_stream;
-        bool flag;
-        if("true" == std::string(argv[3])) {
-            flag = true;
+        bool condition;
+        std::string cond = argv[3] ;
+        std::transform(cond.begin(), cond.end(), cond.begin(),
+                [](unsigned char c){ return std::tolower(c); });
+        if("true" == cond) {
+            condition = true;
         } else{
-            flag = false;
+            condition = false;
         }
-        if(flag){
+        if(condition){
             out_stream.open("../" + std::string(argv[2]) + ".csv");
             out_stream << "Name;X-coordinate;Y-coordinate;Z-coordinate;X-velocity;Y-velocity;Z-velocity;mass" << std::endl;
         }
         for (int i = 0; i < n; ++i) {
             advance(state, 0.01);
-            if(flag) {
+            if(condition) {
                 for (int j = 0; j < BODIES_COUNT; ++j) {
                     out_stream << state[j].name + ";" + double2str(state[j].position.x) + +";" +
                                   double2str(state[j].position.y) + +";" + double2str(state[j].position.z) +
@@ -285,8 +293,13 @@ int main(int argc, char **argv) {
                 }
             }
         }
-        if(flag){out_stream.close();}
+        if(condition){out_stream.close();}
         std::cout << energy(state) << std::endl;
+
+        clock_t end_time=clock();
+        clock_t total_time=end_time-start_time;
+        double time=(total_time)/(double) CLOCKS_PER_SEC;
+        std::cout << "the total time of the cpp program is: "<<time<< "sec"<<'\n';
         return EXIT_SUCCESS;
     }
 }

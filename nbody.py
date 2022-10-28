@@ -14,8 +14,9 @@
 
 import sys
 from math import sqrt, pi as PI
+import time
 
-
+starting_time = time.time()
 def combinations(l):
     result = []
     for x in range(len(l) - 1):
@@ -134,6 +135,9 @@ def main(n, ref="sun", filename="Orbits", condition=True):
 if __name__ == "__main__":
     if len(sys.argv) >= 4:
         main(int(sys.argv[1]), filename=sys.argv[2], condition=(sys.argv[3].lower()=="true"))
+        end_time = time.time()
+        total_time = end_time-starting_time
+        print("the total time of execution is:",total_time)
         sys.exit(0)
     else:
         print(f"This is {sys.argv[0]}")
