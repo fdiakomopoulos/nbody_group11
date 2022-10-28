@@ -15,7 +15,7 @@ if __name__ == "__main__":
                 p = subprocess.run(sub_file)
             else:
                 p = subprocess.check_call(sub_file, shell=True)
-                print("The above values from: ", file)
+                print("The above values from: ", file, "for ",number, "iterations")
                 print(p)
 
 
