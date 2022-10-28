@@ -294,12 +294,11 @@ int main(int argc, char **argv) {
             }
         }
         if(condition){out_stream.close();}
-        std::cout << "Energy: " << energy(state) << std::endl;
-
+        std::cout << "Energy: " << energy(state) << std:endl;
         clock_t end_time=clock();
         clock_t total_time=end_time-start_time;
         double time=(total_time)/(double) CLOCKS_PER_SEC;
-        std::cout << "the total time of the cpp program is: "<<time<< "sec"<<'\n';
+        std::cout << "the total time of the cpp program is: "<< time << "sec"<<'\n';
         return EXIT_SUCCESS;
     }
 }
