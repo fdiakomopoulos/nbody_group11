@@ -137,7 +137,7 @@ if __name__ == "__main__":
         main(int(sys.argv[1]), filename=sys.argv[2], condition=(sys.argv[3].lower()=="true"))
         end_time = time.time()
         total_time = end_time-starting_time
-        print("the total time of execution is:",total_time)
+        print("the total time of execution of .py file is:",total_time)
         sys.exit(0)
     else:
         print(f"This is {sys.argv[0]}")
