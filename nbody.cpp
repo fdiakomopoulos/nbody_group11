@@ -266,7 +266,7 @@ int main(int argc, char **argv) {
     } else {
         const unsigned int n = atoi(argv[1]);
         offset_momentum(state);
-        std::cout << energy(state) << std::endl;
+        std::cout << "Energy" << energy(state) << std::endl;
         std::ofstream out_stream;
         bool condition;
         std::string cond = argv[3] ;
@@ -294,7 +294,7 @@ int main(int argc, char **argv) {
             }
         }
         if(condition){out_stream.close();}
-        std::cout << energy(state) << std::endl;
+        std::cout << "Energy" << energy(state) << std::endl;
 
         clock_t end_time=clock();
         clock_t total_time=end_time-start_time;
