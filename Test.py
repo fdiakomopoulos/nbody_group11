@@ -8,7 +8,7 @@ if __name__ == "__main__":
     cmd_cpp_release = [".\\cmake-build-release\\nbody.exe"]
     cmd_cpp_debug = [".\\cmake-build-debug-visual-studio\\Debug\\nbody.exe"]
     cmd_python = ["python", ".\\nbody.py"]
-    for number in ["5000", "500000", "5000000"]:
+    for number in ["5000", "500000", "5000000", "50000000"]:
         for file in [cmd_cpp_release,cmd_cpp_debug,cmd_python]:
             sub_file = file + [number, "testing", "false"]
             if file[0].startswith("python"):
